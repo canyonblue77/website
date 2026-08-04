@@ -1,0 +1,51 @@
+
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@400;700&display=swap');
+
+/* That code formater thing */
+
+body {
+    background: #FAFAF7;
+    color: #222222;
+    font-family: Inter, sans-serif;
+
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-family: Merriweather, serif;
+    color: #1E3A5F;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: #2762bb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+.tagline {
+    color: #42CFE0;
+    margin-bottom: 2rem;
+}
+
+.accent {
+    color: #8A002A;
+    font-weight: bold;
+}
