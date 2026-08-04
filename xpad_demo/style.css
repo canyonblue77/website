@@ -1,0 +1,144 @@
+/* Core Layout Settings */
+:root {
+    --bg-dark: #121212;
+    --card-bg: #1e1e1e;
+    --xbox-green: #107C10;
+    --xbox-green-hover: #1b9a1b;
+    --text-main: #ffffff;
+    --text-muted: #aaaaaa;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+}
+
+#controller-status {
+    color: var(--xbox-green);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+/* Text Output Box */
+.text-container {
+    width: 100%;
+}
+
+#output-box {
+    background-color: var(--card-bg);
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 80px;
+    font-size: 1.0rem;
+    line-height: 1.2;
+    gap: 3px;
+    word-wrap: break-word;
+    transition: border-color 0.2s;
+}
+
+#output-box:not(:empty) {
+    border-color: var(--xbox-green);
+}
+
+/* Prediction Carousel Layout */
+.prediction-container {
+    width: 100%;
+}
+
+#prediction-carousel {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+.prediction-slot {
+    background-color: var(--card-bg);
+    border: 2px solid #333;
+    border-radius: 6px;
+    padding: 12px 5px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Target classes for active prediction highlights */
+.prediction-slot.active {
+    background-color: var(--xbox-green);
+    border-color: var(--xbox-green-hover);
+    color: var(--text-main);
+}
+
+.prediction-slot.empty {
+    opacity: 0.4;
+    font-weight: normal;
+}
+
+/* Telemetry Monitor Styling */
+.telemetry-container {
+    width: 100%;
+}
+
+#telemetry-box {
+    background-color: var(--card-bg);
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#bitstring-display {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: var(--text-muted);
+}
+
+#active-inputs-display {
+    font-size: 1rem;
+    color: var(--xbox-green);
+    min-height: 1.2rem;
+    font-weight: 500;
+}
+

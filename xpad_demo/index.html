@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xbox Chorded Predictive Input</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Gamepad Input System Demo</h1>
+    <div id="controller-status">Waiting for controller... Press any button.</div>
+</header>
+
+<main>
+    <!-- The live text area holding completed words -->
+    <section class="text-container">
+        <label>Typed Text:</label>
+        <div id="output-box"></div>
+    </section>
+
+
+        <!-- Gamepad Telemetry Monitor -->
+        <section class="telemetry-container">
+            <label>Gamepad State:</label>
+            <div id="telemetry-box">
+                <div id="bitstring-display">000000000000000000000000</div>
+                <div id="active-inputs-display">No inputs detected</div>
+                <div id="current-match-display">No match</div>
+            </div>
+        </section>
+
+
+            <!-- Container for the 8 predictive word slots -->
+            <section class="prediction-container">
+                <label>Predictive Matches:</label>
+                <div id="prediction-carousel">
+                    <div class="prediction-slot empty">...</div>
+                </div>
+            </section>
+</main>
+
+<!-- Load the application logic last -->
+<script type="module" src="index.js"></script>
+</body>
+</html>
