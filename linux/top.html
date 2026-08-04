@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>Top: A Crash Course in</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style type="text/css">
+    /*<![CDATA[*/
+    body {
+      background-color: #fff;
+      color: #000;
+      font-size: 1.1em;
+      font-family: "Red Hat Text", Helvetica, Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      border-bottom: 30px solid black;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    h1 {
+      text-align: left;
+      margin: 0;
+      margin-bottom: .6em;
+      padding: 1em 2em 1.5em 2em;
+      background-color: #000000;
+      color: #3f89D9;
+      font-weight: bold;
+      font-size: 2.5em;
+    }
+    h1 img {
+      border: none;
+      font-size: 10px;
+      margin-bottom: .4em;
+    }
+    div {
+     /* border: 1px solid black;*/
+    }
+    div.main {
+      margin-left: 15px;
+    }
+    div.intro {
+      margin-left: 30px;
+      margin-top:  4px;
+      width: 95%;
+      padding-bottom: 5px;
+    }
+    div.cmds {
+      margin-left: 30px;
+      width: 95%;
+      padding-bottom: 3px;
+      overflow: hidden;
+    }
+    div.key {
+      width: 25px;
+      text-align: center;
+      float: left;
+      height: 100%; 
+    }
+    div.comment {
+      width: 90%;
+      float: left;
+      padding-left: 10px;
+    }
+    code {
+      color: #0a40c2;
+      font-size: 1em;
+      background-color: #81a9ff55;
+      padding-left: 3px;
+      padding-right: 3px;
+      border-radius: 7px;
+      padding-bottom: 1px;
+    }
+    span.key {
+      background: #000000;
+      color: #ffffff;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 5px;
+      padding-bottom: 1px;
+      font-family: 'Courier New', monospace;
+    }
+    /*]]>*/
+  </style>
+</head>
+
+<body>
+  <h1>
+    <img src="../CBLogo.png" alt="Logo" /><br />
+    Top: A Crash Course in
+  </h1>
+  <div class="main">
+    <strong>Crash Course in Top:</strong>
+    <div class="intro">
+      <span class="plain">
+        The top program is a text based application that displays a real-time summary of resource usage and a list of processes.<br />
+        The on-screen display can be modified by issuing commands linked to keyboard keys<br />
+        <br />
+        Type <code class="blue">top</code> to launch the program and try these common commands:
+      </span>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">t</span></div>
+      <div class="comment">Toggles between text and graphical views of CPU usage (none, text, pipes, solid)</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">m</span></div>
+      <div class="comment">Toggles between text and graphical views of memory usage (none, text, pipes, solid)</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">E</span></div>
+      <div class="comment">Toggles unit size for memory (KiB through EiB)</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">1</span></div>
+      <div class="comment">[1] Shows CPU usage per core, while [2] shows per socket</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">c</span></div>
+      <div class="comment">Toggle COMMAND to/from executable vs full cmd line</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">d</span></div>
+      <div class="comment">Change refresh rate; Enter number in increments of .1 seconds</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">&lt;</span></div>
+      <div class="comment">Change sort column one column to the left</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">&gt;</span></div>
+      <div class="comment">Change sort column one column to the right</div>
+    </div>
+    <div class="cmds">
+      <div class="comment" style="margin-left: 50px;">
+        Note: it can be hard to detect which column is currently sorted<br />
+        Recommend pressing [&lt;] repeatedly to ensure sort order is left-most column<br />
+        Then pressing [&gt;] and counting off each Column
+      </div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">R</span></div>
+      <div class="comment">Toggle ascending/descending sort order of current column</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">&darr;</span></div>
+      <div class="comment">Scroll down through list of processes</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">&uarr;</span></div>
+      <div class="comment">Scroll up through list of processes</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">&rarr;</span></div>
+      <div class="comment">Scroll right for information that runs offscreen</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">&larr;</span></div>
+      <div class="comment">Scroll left to return from offscreen data</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">u</span></div>
+      <div class="comment">Filter by user; enter a username at the prompt</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">o</span></div>
+      <div class="comment">Filter by Other columns; COLUMN=pattern</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">=</span></div>
+      <div class="comment">Clear all column filters</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">h</span></div>
+      <div class="comment">Display an information dense cheat sheet of commands</div>
+    </div>
+    <div class="cmds">
+      <div class="key"><span class="key">W</span></div>
+      <div class="comment">Save configuration; applies current configuration on subsequent starts</div>
+    </div>
+
+
+    <div class="cmds" style="padding-bottom: 15px;">
+      <details style="padding-top: 15px;">
+      <summary>
+        <strong>How to read graphical view of usage </strong>
+        <span style="font-size: .5em;"> [Click To Expand]</span>
+      </summary>
+      <div class="comment" style="margin-left: 35px;">In graphical mode CPU, RAM, &amp; Swap are shown as:</div>
+      <div style="width: 560px; margin-left: 55px; border: 1px solid black; overflow: hidden;">
+        <div class="comment" style="margin-left: 25px; padding-left: 0px; overflow: hidden;">
+          <div style="float: left; width: 100px;">%Cpu(s)</div>
+          <div style="float: left; width: 100px;"><code>user%</code>/<code>sys%</code></div>
+          <div style="float: left; width: 70px; text-align: right;"><code>total%</code></div>
+          <div style="float: left; width: 210px;">[|||||||</div>
+          <div style="float: left; width: 5px;">]</div>
+        </div>
+        <div class="comment" style="margin-left: 25px; padding-left: 0px; overflow: hidden;">
+          <div style="float: left; width: 100px;"><code class="blue">Unit</code> Mem :</div>
+          <div style="float: left; width: 100px;"><code>%used</code>/<code>amntM</code></div>
+          <div style="float: left; width: 70px;">&nbsp;</div>
+          <div style="float: left; width: 210px;">[||||||||||</div>
+          <div style="float: left; width: 5px;">]</div>
+        </div>
+        <div class="comment" style="margin-left: 25px; padding-left: 0px; overflow: hidden;">
+          <div style="float: left; width: 100px;"><code class="blue">Unit</code> Swap:</div>
+          <div style="float: left; width: 100px;"><code>%used</code>/<code>amntS</code></div>
+          <div style="float: left; width: 70px;">&nbsp;</div>
+          <div style="float: left; width: 210px;">[||||</div>
+          <div style="float: left; width: 5px;">]</div>
+        </div>
+      </div>
+      <div style="width: 100%; overflow: hidden;">
+        <div style="width: 14%; float: left; height: 100%;">&nbsp;</div>
+        <div style="width: 55px; float: left; height: 100%;"><code>user%</code></div>
+        <div style="width: auto; float: left; height: 100%;">= Percentage of CPU used for user processes</div>
+      </div>
+      <div style="width: 100%; overflow: hidden;">
+        <div style="width: 14%; float: left; height: 100%;">&nbsp;</div>
+        <div style="width: 55px; float: left; height: 100%;"><code>sys%</code></div>
+        <div style="width: auto; float: left; height: 100%;">= Percentage of CPU used for system processes</div>
+      </div>
+      <div style="width: 100%; overflow: hidden;">
+        <div style="width: 14%; float: left; height: 100%;">&nbsp;</div>
+        <div style="width: 55px; float: left; height: 100%;"><code>total%</code></div>
+        <div style="width: auto; float: left; height: 100%;">= Percentage of CPU used for all processes</div>
+      </div>
+      <div style="width: 100%; overflow: hidden;">
+        <div style="width: 14%; float: left; height: 100%;">&nbsp;</div>
+        <div style="width: 55px; float: left; height: 100%;"><code>Unit</code></div>
+        <div style="width: auto; float: left; height: 100%;">= The unit size for memory (i.e. GibiBytes)</div>
+      </div>
+      <div style="width: 100%; overflow: hidden;">
+        <div style="width: 14%; float: left; height: 100%;">&nbsp;</div>
+        <div style="width: 55px; float: left; height: 100%;"><code>%used</code></div>
+        <div style="width: auto; float: left; height: 100%;">= Percentage of RAM/Swap used</div>
+      </div>
+      <div style="width: 100%; overflow: hidden;">
+        <div style="width: 14%; float: left; height: 100%;">&nbsp;</div>
+        <div style="width: 55px; float: left; height: 100%;"><code>amntM</code></div>
+        <div style="width: auto; float: left; height: 100%;">= Amount of Memory(RAM) host has</div>
+      </div>
+      <div style="width: 100%; overflow: hidden;">
+        <div style="width: 14%; float: left; height: 100%;">&nbsp;</div>
+        <div style="width: 55px; float: left; height: 100%;"><code>amntS</code></div>
+        <div style="width: auto; float: left; height: 100%;">= Amount of Swap space host has</div>
+      </div>
+      </details>
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+
+
+  <p>These features not yet ready</p>
+
+<details>
+<summary><strong>How to Add, Remove, &amp; Reorder columns</strong></summary>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 4%; float: left; height: 100%; text-align: center;"><span style="background: black; color: #ffffff; padding-left: 5px; padding-right: 5px; border-radius: 5px; padding-bottom: 1px;">f</span></div>
+<div style="width: 90%; float: left; height: 100%; margin-left: 10px;">Select Columns to Display, Hide, and Order</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 10%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 84%; float: left; height: 100%;"><u>To display or hide columns</u></div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 14%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 80%; float: left; height: 100%;">Asterix indicates displayed columns</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 14%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 80%; float: left; height: 100%;">[Arrow Up/Down] to highlight a column</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 14%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 80%; float: left; height: 100%;">[SPACE] to display/hide</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 10%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 84%; float: left; height: 100%;"><u>To change column order</u></div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 14%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 80%; float: left; height: 100%;">[Arrow Up/Down] to highlight a column</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 14%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 80%; float: left; height: 100%;">[Arrow Right] to "pickup" the column</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 22%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 62%; float: left; height: 100%;">Note how the highlight expands to the description</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 14%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 80%; float: left; height: 100%;">[Arrow Up/Down] to move the column</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 14%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 80%; float: left; height: 100%;">[Arrow Left] to "drop" the column into place</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 10%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 84%; float: left; height: 100%;"><u>To select the default column to sort on</u></div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 14%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 80%; float: left; height: 100%;">[Arrow Up/Down] to highlight a column</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 14%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 80%; float: left; height: 100%;">[s] to select the highlighted column</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 22%; float: left; height: 100%; text-align: center;">&nbsp;</div>
+<div style="width: 62%; float: left; height: 100%;">Note column name appears at end of very top line</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 7%; float: left; height: 100%; text-align: center;"><span style="background: black; color: #ffffff; padding-left: 5px; padding-right: 5px; border-radius: 5px; padding-bottom: 1px;">ESC</span></div>
+<div style="width: 87%; float: left; height: 100%; margin-left: 10px;">to exit Column Selection screen; Changes are applied instantly</div>
+</div>
+</details>
+
+
+<details>
+<summary><strong>Understanding Load Average</strong></summary>
+<ol style="list-style-position: inside; list-style-type: none;">
+<li style="padding-top: 1px;">
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 2%; float: left; height: 100%;">&nbsp;</div>
+<div style="width: 92%; float: left; height: 100%;">Author's note:<br /><span style="font-style: italic; color: #006600; font-size: 10px;">As a society, we teach children that the sky is blue even though it is not.<br />We do this because... wavelengths, molecules, diffraction, Rayleigh scattering...<br />I wouldn't make my own worst enemy attempt that explanation.<br />We use the "the sky is blue" as a placeholder until the foundational knowledge and need to know is in-place.<br />Since load average is complex, I will give a "the sky is blue" explanation.</span></div>
+</div>
+</li>
+<li style="padding-top: 3px;">
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 2%; float: left; height: 100%;">&nbsp;</div>
+<div style="width: 92%; float: left; height: 100%;">Load average can be thought of as:<br />&nbsp; &nbsp; &nbsp; "the number of cores needed to work on all running or waiting to be run tasks"</div>
+</div>
+</li>
+<li style="padding-top: 3px;">
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 2%; float: left; height: 100%;">&nbsp;</div>
+<div style="width: 92%; float: left; height: 100%;">When Load Average is _____ than the actual core count:</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 7%; float: left; height: 100%;">&nbsp;</div>
+<div style="width: 87%; float: left; height: 100%;">less &nbsp; &nbsp;= Good: there are unused resources</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 7%; float: left; height: 100%;">&nbsp;</div>
+<div style="width: 87%; float: left; height: 100%;">equal &nbsp;= Ok: all cores busy, no tasks waiting for a free core</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 7%; float: left; height: 100%;">&nbsp;</div>
+<div style="width: 87%; float: left; height: 100%;">more &nbsp;= Busy: all cores busy, tasks waiting for free cores</div>
+</div>
+</li>
+<li style="padding-top: 3px;">
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 2%; float: left; height: 100%;">&nbsp;</div>
+<div style="width: 92%; float: left; height: 100%;">The first line in top shows how the load is changing over time</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 7%; float: left; height: 100%;">&nbsp;</div>
+<div style="width: 87%; float: left; height: 100%;">1st # = average load over last 1 minute</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 7%; float: left; height: 100%;">&nbsp;</div>
+<div style="width: 87%; float: left; height: 100%;">2nd # = average load over last 5 minutes</div>
+</div>
+</li>
+<li>
+<div style="width: 100%; overflow: hidden;">
+<div style="width: 7%; float: left; height: 100%;">&nbsp;</div>
+<div style="width: 87%; float: left; height: 100%;">3rd # = average load over last 15 minutes</div>
+</div>
+</li>
+</ol>
+</details></li>
+</div>
+</body>
+</html>
+
+
