@@ -9,14 +9,23 @@ body {
     background: #FAFAF7;
     color: #222222;
     font-family: Inter, sans-serif;
+    font-size: 1.3rem;
 
     max-width: 900px;
     margin: 0 auto;
     padding: 2rem;
 
     line-height: 1.7;
+    text-align: center;
 }
 
+header {
+    color: #8A002A;
+    padding: 1rem;
+    text-align: center;
+    justify-content: center;
+    border-bottom: 3px dashed #8A002A;
+}
 h1, h2, h3 {
     font-family: Merriweather, serif;
     color: #1E3A5F;
@@ -25,6 +34,10 @@ h1, h2, h3 {
 h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
+}
+
+h2 {
+    line-height: 1.9;
 }
 
 a {
@@ -40,6 +53,14 @@ p {
     margin-bottom: 1.5rem;
 }
 
+section {
+    border-bottom: 3px dashed #8A002A;
+}
+
+last-section {
+    border-bottom: none;
+}
+
 .tagline {
     color: #42CFE0;
     margin-bottom: 2rem;
@@ -48,4 +69,27 @@ p {
 .accent {
     color: #8A002A;
     font-weight: bold;
+}
+
+.accent-big {
+    color: #8A002A;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+.guide-div1 {
+    width: 19%;
+    height:1px;
+    text-align: left;
+}
+
+.guide-div2 {
+    width: 70%;
+    text-align: left;
+}
+
+.guide-div3 {
+    width: 1%;
+    height:1px;
+    text-align: left;
 }
